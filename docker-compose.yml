@@ -10,3 +10,23 @@ services:
       - type: bind
         source: .
         target: /learn-nestjs
+
+  db:
+    image: mariadb
+    restart: always
+    ports:
+      - 3306:3306
+    volumes:
+      - "./mysql:/var/lib/mysql"
+      - "./initdb.d:/docker-entrypoint-initdb.d"
+    environment:
+      - MYSQL_ROOT_PASSWORD=pwd
+      - MYSQL_DATABASE=test
+      - MYSQL_USER=user
+      - MYSQL_PASSWORD=pwd
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
