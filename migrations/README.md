@@ -1,7 +1,7 @@
 # migration
 以下のコマンドでmigrationファイルを作成する。
 ```bash
-node_modules/.bin/sequelize model:create --name user --underscored --attributes name:string,birth:date,country_code:integer
+$ node_modules/.bin/sequelize model:create --name {テーブル名} --underscored --attributes name:string,birth:date,country_code:integer
 ```
 
 migrateする
