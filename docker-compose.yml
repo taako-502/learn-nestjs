@@ -1,32 +1,28 @@
-version: "3.8"
+version: '3.7'
 services:
-  api:
-    container_name: learn-nestjs
+  api-server:
+    container_name: api-server
     build: .
     tty: true
+    restart: always
     ports:
-      - "3000:3000"
+      - '3000:3000'
     volumes:
       - type: bind
         source: .
-        target: /learn-nestjs
-
-  db:
+        target: /api-server
+    depends_on:
+      - db-server
+      
+  db-server:
+    container_name: db-server
     image: mariadb
     restart: always
     ports:
-      - 3306:3306
-    volumes:
-      - "./mysql:/var/lib/mysql"
-      - "./initdb.d:/docker-entrypoint-initdb.d"
+      - '3306:3306'
     environment:
-      - MYSQL_ROOT_PASSWORD=pwd
-      - MYSQL_DATABASE=test
-      - MYSQL_USER=user
-      - MYSQL_PASSWORD=pwd
+      MYSQL_ROOT_PASSWORD: pwd
+      MYSQL_DATABASE: test
+      MYSQL_USER: user
+      MYSQL_PASSWORD: pwd
 
-  adminer:
-    image: adminer
-    restart: always
-    ports:
-      - 8080:8080

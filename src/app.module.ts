@@ -6,7 +6,7 @@ import { join } from 'path';
 import { BooksModule } from './books/books.module';
 import { ApolloDriver } from '@nestjs/apollo';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { Book } from './books/book';
+// import { Book } from './books/book';
 
 @Module({
   imports: [
@@ -16,12 +16,12 @@ import { Book } from './books/book';
     }),
     TypeOrmModule.forRoot({
         type: 'mysql',
-        host: '127.0.0.1',
+        host: 'db-server',
         port: 3306,
         username: 'user',
         password: 'dev',
         database: 'test',
-        entities: [Book],
+        entities: [],
         synchronize: true,
       }),
     BooksModule,
