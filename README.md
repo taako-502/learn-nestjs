@@ -9,6 +9,9 @@ docker compose up -d --build
 $ docker compose stop
 ```
 
+## GraphQL
+http://localhost:3000/graphql
+
 ## ORM
 マイグレーションファイルを作成。
 ```bash
