@@ -5,7 +5,7 @@
 type Book {
   id: ID!
   title: String!
-  author: String!
+  author: [String!]!
   price: Int!
   createdAt: DateTime!
 }
