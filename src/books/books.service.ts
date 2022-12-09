@@ -16,7 +16,7 @@ export class BooksService {
   }
 
   findOneById(id: number): Promise<Book> {
-    return this.booksRepostiory.findOne({where: {id: id}});
+    return this.booksRepostiory.findOne({ where: { id: id } });
   }
 
   async create(data: newBookInput): Promise<Book> {
