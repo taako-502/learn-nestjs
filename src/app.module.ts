@@ -7,6 +7,9 @@ import { BooksModule } from './books/books.module';
 import { ApolloDriver } from '@nestjs/apollo';
 import { TypeOrmModule } from '@nestjs/typeorm';
 // import { Book } from './books/book';
+import { TaskController } from './task/task.controller';
+import { TaskService } from './task/task.service';
+import { TaskModule } from './task/task.module';
 
 @Module({
   imports: [
@@ -26,8 +29,9 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       dropSchema: true,
     }),
     BooksModule,
+    TaskModule,
   ],
-  controllers: [AppController],
-  providers: [AppService],
+  controllers: [AppController, TaskController],
+  providers: [AppService, TaskService],
 })
 export class AppModule {}

@@ -7,10 +7,8 @@
       "password": "pwd",
       "database": "test",
       "synchronize": true,
-      "entities": ["src/entity/*.entity.{ts,js}"],
-      "migrations": ["src/migration/*.ts"],
-      "cli": {
-        "migrationsDir": "src/migration/"
-      }
+      "entities": ["dist/entities/**/*.entity.js"],
+      "migrations": ["dist/migrations/**/*.js"],
+      "logging": false
     }
   ]
