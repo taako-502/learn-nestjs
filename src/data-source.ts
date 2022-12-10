@@ -1,7 +1,7 @@
 import * as mysqlDriver from 'mysql2';
 import { DataSource } from 'typeorm';
 import { Task } from './entities/task.entity';
-import { Book } from './entities/Book.entity';
+import { Book } from './entities/book.entity';
 
 export const AppDataSource = new DataSource({
     driver: mysqlDriver,
