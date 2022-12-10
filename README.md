@@ -27,5 +27,5 @@ $ yarn typeorm migration:run
 
 ## Typeorm Migration
 ```
-npm run typeorm migration:run -- -d src/data-source.ts
+$ yarn migration:run
 ```

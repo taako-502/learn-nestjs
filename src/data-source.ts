@@ -1,6 +1,7 @@
 import * as mysqlDriver from 'mysql2';
-import {DataSource} from 'typeorm';
+import { DataSource } from 'typeorm';
 import { Task } from './entities/task.entity';
+import { Book } from './entities/Book.entity';
 
 export const AppDataSource = new DataSource({
     driver: mysqlDriver,
@@ -12,7 +13,7 @@ export const AppDataSource = new DataSource({
     database: 'test',
     synchronize: true,
     logging: true,
-    entities: [Task],
+    entities: [Task, Book],
     subscribers: [],
     migrations: [],
 })
