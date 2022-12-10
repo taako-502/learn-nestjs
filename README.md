@@ -12,31 +12,18 @@ $ docker compose stop
 ## GraphQL
 http://localhost:3000/graphql
 
-## ORM
-マイグレーションファイルを作成。
-```bash
-$ yarn build
-$ yarn typeorm migration:generate -d src/migrations -n create-task
-```
-
-マイグレーションファイルを実行。
-```bash
-$ yarn build
-$ yarn typeorm migration:run
-```
-
 ## Typeorm
 ### エンティティの作成
-```
+```bash
 $ yarn typeorm entity:create ./src/entities/{Entitiy Name}
 ```
 
 ### マイグレーションの作成
-```
+```bash
 $ yarn typeorm migration:generate -d src/data-source.ts src/migrations/{Migration Name}
 ```
 
 ### マイグレーションを実行
-```
+```bash
 $ yarn migration:run
 ```
