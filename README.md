@@ -25,7 +25,18 @@ $ yarn build
 $ yarn typeorm migration:run
 ```
 
-## Typeorm Migration
+## Typeorm
+### エンティティの作成
+```
+$ yarn typeorm entity:create ./src/entities/{Entitiy Name}
+```
+
+### マイグレーションの作成
+```
+$ yarn typeorm migration:generate -d src/data-source.ts src/migrations/{Migration Name}
+```
+
+### マイグレーションを実行
 ```
 $ yarn migration:run
 ```
