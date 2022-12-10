@@ -24,3 +24,8 @@ $ yarn typeorm migration:generate -d src/migrations -n create-task
 $ yarn build
 $ yarn typeorm migration:run
 ```
+
+## Typeorm Migration
+```
+npm run typeorm migration:run -- -d src/data-source.ts
+```
