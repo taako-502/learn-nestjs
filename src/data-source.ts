@@ -15,5 +15,5 @@ export const AppDataSource = new DataSource({
     logging: true,
     entities: [Task, Book],
     subscribers: [],
-    migrations: [],
+    migrations: ['src/migrations/*.ts'],
 })
