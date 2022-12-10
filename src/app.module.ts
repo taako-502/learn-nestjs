@@ -1,13 +1,15 @@
 import { Module } from '@nestjs/common';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { GraphQLModule } from '@nestjs/graphql';
+import { DataSource } from 'typeorm';
+import { join } from 'path';
+
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { GraphQLModule } from '@nestjs/graphql';
-import { join } from 'path';
-import { BooksModule } from './books/books.module';
 import { ApolloDriver } from '@nestjs/apollo';
-import { TypeOrmModule } from '@nestjs/typeorm';
-// import { Book } from './books/book';
+import { BooksModule } from './books/books.module';
 import { TaskModule } from './task/task.module';
+// import { Book } from './books/book';
 
 @Module({
   imports: [
@@ -32,4 +34,6 @@ import { TaskModule } from './task/task.module';
   controllers: [AppController],
   providers: [AppService],
 })
-export class AppModule {}
+export class AppModule {
+  constructor(private dataSource: DataSource) {}
+}

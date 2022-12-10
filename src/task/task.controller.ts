@@ -1,6 +1,6 @@
 import { Controller, Get, Post, Body, Param } from '@nestjs/common';
 import { TaskService } from './task.service';
-import { Task } from './task';
+import { Task } from '../entities/task.entity';
 import { CreateTaskDTO } from './task.dto';
 import { InsertResult } from 'typeorm';
 
