@@ -18,8 +18,8 @@ export class TaskController {
         return await this.service.create(task);
     }
 
-    // @Get(':id')
-    // async getTask(@Param('id') id: string): Promise<Task> {
-    //     return await this.service.find(Number(id));
-    // }
+    @Get(':id')
+    async getTask(@Param('id') id: string): Promise<Task> {
+        return await this.service.find(Number(id));
+    }
 }

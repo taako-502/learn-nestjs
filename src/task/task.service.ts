@@ -20,7 +20,7 @@ export class TaskService {
   }
 
   // エラーになるのでコメントアウト
-  // async find(id: number): Promise<Task> | null {
-  //   return await this.taskRepository.findOne({ task_id: id });
-  // }
+  async find(id: number): Promise<Task> | null {
+    return await this.taskRepository.findOne({where: { task_id: id }})
+  }
 }
