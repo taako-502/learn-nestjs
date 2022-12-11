@@ -1,5 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { Hoge as HogeController } from './hoge.controller';
+import { HogeController } from './hoge.controller';
 
 describe('HogeController', () => {
   let controller: HogeController;
