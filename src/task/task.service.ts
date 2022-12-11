@@ -19,7 +19,6 @@ export class TaskService {
     return await this.taskRepository.insert(Task);
   }
 
-  // エラーになるのでコメントアウト
   async find(id: number): Promise<Task> | null {
     return await this.taskRepository.findOne({where: { task_id: id }})
   }
