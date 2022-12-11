@@ -27,3 +27,10 @@ $ yarn typeorm migration:generate -d src/data-source.ts src/migrations/{Migratio
 ```bash
 $ yarn migration:run
 ```
+
+## curlによる動作確認
+`curl path`で実行。
+`-X` でhttpリクエストを指定する。
+```
+# 例）url http://localhost:3000/hoge -X GET
+```

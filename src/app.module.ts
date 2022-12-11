@@ -4,12 +4,15 @@ import { GraphQLModule } from '@nestjs/graphql';
 import { DataSource } from 'typeorm';
 import { join } from 'path';
 
+// App
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ApolloDriver } from '@nestjs/apollo';
+
+// Module
 import { BooksModule } from './books/books.module';
 import { TaskModule } from './task/task.module';
-// import { Book } from './books/book';
+import { HogeModule } from './hoge/hoge.module';
 
 @Module({
   imports: [
@@ -30,6 +33,7 @@ import { TaskModule } from './task/task.module';
     }),
     BooksModule,
     TaskModule,
+    HogeModule,
   ],
   controllers: [AppController],
   providers: [AppService],
