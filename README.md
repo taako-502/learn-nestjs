@@ -1,7 +1,7 @@
 # learn-nestjs
 ## Docker起動
 ```bash
-$ docker compose up -d --build
+$ docker compose up -d
 ```
 
 止める場合は以下。
