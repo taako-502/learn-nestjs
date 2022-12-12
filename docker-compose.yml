@@ -16,6 +16,9 @@ services:
       
   db-server:
     container_name: db-server
+    volumes:
+      - ./mysql/initdb.d:/docker-entrypoint-initdb.d
+      - ./mysql/db:/var/lib/mysql
     image: mariadb
     restart: always
     ports:
