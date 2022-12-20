@@ -5,7 +5,7 @@ import { DataSource } from 'typeorm';
 export const AppDataSource = new DataSource({
     driver: mysqlDriver,
     type: 'mysql',
-    host: '127.0.0.1',
+    host: 'db-server',
     port: 3306,
     username: 'user',
     password: 'pwd',
