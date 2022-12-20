@@ -1,3 +1,4 @@
+// import "reflect-metadata"
 import * as mysqlDriver from 'mysql2';
 import { DataSource } from 'typeorm';
 
@@ -15,3 +16,12 @@ export const AppDataSource = new DataSource({
     subscribers: [],
     migrations: ['src/migrations/*.ts'],
 })
+
+// EntityMetadataNotFoundErrorの回避用
+// AppDataSource.initialize()
+//     .then(() => {
+//         console.log("Data Source has been initialized!")
+//     })
+//     .catch((err) => {
+//         console.error("Error during Data Source initialization", err)
+//     })

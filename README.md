@@ -34,3 +34,7 @@ $ yarn migration:run
 ```
 # 例）url http://localhost:3000/hoge -X GET
 ```
+
+```
+$ curl http://localhost:3000/task -X POST -d "title=ジムに行く&due_date=2021-10-05"
+```
