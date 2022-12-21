@@ -29,7 +29,7 @@ import { HogeModule } from './hoge/hoge.module';
       database: 'test',
       entities: [],
       synchronize: true,
-      dropSchema: true,
+      dropSchema: false, //データベースの初期化有無
     }),
     BooksModule,
     TaskModule,
