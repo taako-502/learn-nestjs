@@ -14,6 +14,8 @@ import { BooksModule } from './books/books.module';
 import { TaskModule } from './task/task.module';
 import { HogeModule } from './hoge/hoge.module';
 
+import { Task } from './entities/task.entity';
+
 @Module({
   imports: [
     GraphQLModule.forRoot({
@@ -27,7 +29,7 @@ import { HogeModule } from './hoge/hoge.module';
       username: 'user',
       password: 'pwd',
       database: 'test',
-      entities: [],
+      entities: [Task],
       synchronize: true,
       dropSchema: false, //データベースの初期化有無
     }),
