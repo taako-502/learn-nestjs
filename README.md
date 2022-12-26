@@ -25,7 +25,7 @@ $ yarn typeorm migration:generate -d src/data-source.ts src/migrations/{Migratio
 
 ### マイグレーションを実行
 ```bash
-$ yarn migration:run
+$ yarn typeorm migration:run -d src/data-source.ts
 ```
 
 ## curlによる動作確認
