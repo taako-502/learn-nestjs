@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { Task } from '../entities/task.entity';
-import { Repository, InsertResult } from 'typeorm'; 
+import { Repository, InsertResult } from 'typeorm';
 import { InjectRepository } from '@nestjs/typeorm';
 import { CreateTaskDTO } from './task.dto';
 
@@ -8,7 +8,7 @@ import { CreateTaskDTO } from './task.dto';
 export class TaskService {
   constructor(
     @InjectRepository(Task)
-    private readonly taskRepository: Repository<Task>
+    private readonly taskRepository: Repository<Task>,
   ) {}
 
   async findAll(): Promise<Task[]> {
@@ -20,6 +20,6 @@ export class TaskService {
   }
 
   async find(id: number): Promise<Task> | null {
-    return await this.taskRepository.findOne({where: { task_id: id }})
+    return await this.taskRepository.findOne({ where: { task_id: id } });
   }
 }

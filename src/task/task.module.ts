@@ -6,8 +6,8 @@ import { Task } from '../entities/task.entity';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
 @Module({
-    controllers: [TaskController],
-    imports: [TypeOrmModule.forFeature([Task])],
-    providers: [AppService, TaskService],
+  controllers: [TaskController],
+  imports: [TypeOrmModule.forFeature([Task])],
+  providers: [AppService, TaskService],
 })
 export class TaskModule {}

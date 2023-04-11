@@ -4,7 +4,7 @@ import { AppService } from './../app.service';
 import { HogeService } from './hoge.service';
 
 @Module({
-    controllers: [HogeController],
-    providers: [AppService, HogeService],
+  controllers: [HogeController],
+  providers: [AppService, HogeService],
 })
 export class HogeModule {}
