@@ -31,10 +31,10 @@ $ yarn typeorm migration:run -d src/data-source.ts
 ## curlによる動作確認
 `curl path`で実行。
 `-X` でhttpリクエストを指定する。
-```
-# 例）url http://localhost:3000/hoge -X GET
-```
-
-```
+```bash
+# 例）
+# タスクを登録
 $ curl http://localhost:3000/task -X POST -d "title=ジムに行く&due_date=2021-10-05"
+# タスクを取得
+$ curl http://localhost:3000/hoge -X GET
 ```
