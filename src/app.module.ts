@@ -24,7 +24,7 @@ import { Task } from './entities/task.entity';
     }),
     TypeOrmModule.forRoot({
       type: 'mysql',
-      host: 'db-server',
+      host: 'learn-nestjs-db-server',
       port: 3306,
       username: 'user',
       password: 'pwd',

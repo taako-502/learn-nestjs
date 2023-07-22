@@ -38,3 +38,14 @@ $ curl http://localhost:3000/task -X POST -d "title=ジムに行く&due_date=202
 # タスクを取得
 $ curl http://localhost:3000/hoge -X GET
 ```
+
+## データベースに権限をつける必要がある
+管理者（たぶんroot/password）でログインして、以下を実行する。
+```sql
+CREATE USER 'user'@'localhost' IDENTIFIED BY 'password';
+GRANT ALL PRIVILEGES ON *.* TO 'user'@'localhost' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
+GRANT CREATE, ALTER, DROP ON *.* TO 'user'@'%';
+FLUSH PRIVILEGES;
+```
+※ `user` と `password` は任意の値でOK

@@ -1,0 +1,31 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model book {
+  id        Int      @id @default(autoincrement())
+  title     String   @db.VarChar(30)
+  author    String   @db.VarChar(255)
+  price     Int      @db.UnsignedInt
+  createdAt DateTime @default(now()) @db.DateTime(6)
+}
+
+model migrations {
+  id        Int    @id @default(autoincrement())
+  timestamp BigInt
+  name      String @db.VarChar(255)
+}
+
+model task {
+  task_id    Int      @id @default(autoincrement())
+  title      String   @db.VarChar(20)
+  due_date   DateTime @db.Date
+  status     Boolean  @default(true)
+  created_at DateTime @default(now()) @db.DateTime(6)
+  updated_at DateTime @default(now()) @db.DateTime(6)
+}

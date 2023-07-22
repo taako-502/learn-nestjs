@@ -12,10 +12,10 @@ services:
         source: .
         target: /api-server
     depends_on:
-      - db-server
+      - learn-nestjs-db-server
       
-  db-server:
-    container_name: db-server
+  learn-nestjs-db-server:
+    container_name: learn-nestjs-db-server
     volumes:
       - data-volume:/var/lib/mysql
     image: mariadb:10.10.2
@@ -23,10 +23,10 @@ services:
     ports:
       - '3306:3306'
     environment:
-      MYSQL_ROOT_PASSWORD: pwd
-      MYSQL_DATABASE: test
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: learn_nestjs
       MYSQL_USER: user
-      MYSQL_PASSWORD: pwd
+      MYSQL_PASSWORD: password
 
 volumes:
   data-volume:

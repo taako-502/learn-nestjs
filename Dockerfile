@@ -1,12 +1,13 @@
-FROM node:16.13.1-alpine
-RUN npm i -g @nestjs/cli
+FROM node:16.19.0
+RUN yarn add global npm@9.4.0
+RUN yarn add global @nestjs/cli
 
 WORKDIR /api-server
 COPY package*.json /api-server/
 
 # curlインストール
-RUN apk update
-RUN apk add curl
+RUN apt-get update
+RUN apt-get install -y curl
 
-RUN npm i
-CMD [ "npm", "run", "start:dev"]
+RUN yarn
+CMD [ "yarn", "start:dev"]
