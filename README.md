@@ -1,4 +1,8 @@
 # learn-nestjs
+## 概要
+- NestJS
+- TypeORM
+
 ## Docker起動
 ```bash
 $ docker compose up -d
