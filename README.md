@@ -39,7 +39,12 @@ $ curl http://localhost:3000/task -X POST -d "title=ジムに行く&due_date=202
 $ curl http://localhost:3000/hoge -X GET
 ```
 
-## データベースに権限をつける必要がある
+## Prismaについて
+### 状況
+中途半端に導入してしまったが、うまく動かないので、実際にはTypeORMが動き続けている。
+Prismaに関しては気にしないようにしてほしい。
+
+### データベースに権限をつける必要がある
 管理者（たぶんroot/password）でログインして、以下を実行する。
 ```sql
 CREATE USER 'user'@'localhost' IDENTIFIED BY 'password';

@@ -8,7 +8,7 @@ import {
 
 @Entity()
 @ObjectType()
-export class books {
+export class Book {
   @PrimaryGeneratedColumn()
   @Field((type) => ID)
   id: number;
@@ -18,7 +18,7 @@ export class books {
   title: string;
 
   @Column()
-  @Field((type) => [String])
+  @Field()
   author: string;
 
   @Column({ type: 'int', unsigned: true })

@@ -1,7 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { BooksService } from './books.service';
 import { getRepositoryToken } from '@nestjs/typeorm';
-import { books } from 'src/entities/book.entity';
+import { Book } from 'src/entities/book.entity';
 
 describe('BooksService', () => {
   let service: BooksService;
@@ -11,7 +11,7 @@ describe('BooksService', () => {
       providers: [
         BooksService,
         {
-          provide: getRepositoryToken(books),
+          provide: getRepositoryToken(Book),
           useValue: {}, // Provide your custom mock here, or use a library like jest.mock()
         },
       ],

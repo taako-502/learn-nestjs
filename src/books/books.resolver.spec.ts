@@ -2,7 +2,7 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { BooksResolver } from './books.resolver';
 import { BooksService } from './books.service';
 import { getRepositoryToken } from '@nestjs/typeorm';
-import { books } from 'src/entities/book.entity';
+import { Book } from 'src/entities/book.entity';
 
 describe('BooksResolver', () => {
   let resolver: BooksResolver;
@@ -20,7 +20,7 @@ describe('BooksResolver', () => {
         BooksResolver,
         BooksService,
         {
-          provide: getRepositoryToken(books),
+          provide: getRepositoryToken(Book),
           useValue: mockRepository,
         },
       ],
