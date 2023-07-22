@@ -1,14 +1,11 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { GraphQLModule } from '@nestjs/graphql';
 import { DataSource } from 'typeorm';
-import { join } from 'path';
 import { config } from 'dotenv'
 
 // App
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { ApolloDriver } from '@nestjs/apollo';
 
 // Module
 import { BooksModule } from './books/books.module';
@@ -16,16 +13,12 @@ import { TaskModule } from './task/task.module';
 import { HogeModule } from './hoge/hoge.module';
 
 import { Task } from './entities/task.entity';
-// import { PrismaService } from './prisma.service';
+import { PrismaService } from './prisma.service';
 
 config()
 
 @Module({
   imports: [
-    GraphQLModule.forRoot({
-      driver: ApolloDriver,
-      autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
-    }),
     TypeOrmModule.forRoot({
       type: 'mysql',
       host: process.env.DB_HOST,
@@ -42,8 +35,7 @@ config()
     HogeModule,
   ],
   controllers: [AppController],
-  providers: [AppService, /* PrismaService */], // TODO: PrismaServiceをここに追加
-  exports: [/* PrismaService */], // TODO: PrismaServiceをここに追加
+  providers: [AppService, /* PrismaService */],
 })
 export class AppModule {
   constructor(private dataSource: DataSource) {}
