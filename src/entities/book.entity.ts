@@ -8,7 +8,7 @@ import {
 
 @Entity()
 @ObjectType()
-export class Book {
+export class books {
   @PrimaryGeneratedColumn()
   @Field((type) => ID)
   id: number;

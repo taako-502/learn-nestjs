@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { Book } from '../entities/book.entity';
+import { books } from '../entities/book.entity';
 import { newBookInput } from './dto/newBook.input';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
@@ -7,19 +7,19 @@ import { Repository } from 'typeorm';
 @Injectable()
 export class BooksService {
   constructor(
-    @InjectRepository(Book)
-    private booksRepostiory: Repository<Book>,
+    @InjectRepository(books)
+    private booksRepostiory: Repository<books>,
   ) {}
 
-  findAll(): Promise<Book[]> {
+  findAll(): Promise<books[]> {
     return this.booksRepostiory.find();
   }
 
-  findOneById(id: number): Promise<Book> {
+  findOneById(id: number): Promise<books> {
     return this.booksRepostiory.findOne({ where: { id: id } });
   }
 
-  async create(data: newBookInput): Promise<Book> {
+  async create(data: newBookInput): Promise<books> {
     const book = this.booksRepostiory.create(data);
     await this.booksRepostiory.save(book);
     return book;

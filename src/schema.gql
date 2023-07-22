@@ -2,7 +2,7 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
-type Book {
+type books {
   id: ID!
   title: String!
   author: [String!]!
@@ -16,12 +16,12 @@ A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date
 scalar DateTime
 
 type Query {
-  books: [Book!]!
-  getBook(id: Int!): Book!
+  books: [books!]!
+  getBook(id: Int!): books!
 }
 
 type Mutation {
-  addBook(newBook: newBookInput!): Book!
+  addBook(newBook: newBookInput!): books!
   removeBook(id: Int!): Boolean!
 }
 

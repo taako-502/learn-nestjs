@@ -1,5 +1,5 @@
 -- CreateTable
-CREATE TABLE `book` (
+CREATE TABLE `books` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
     `title` VARCHAR(30) NOT NULL,
     `author` VARCHAR(255) NOT NULL,
