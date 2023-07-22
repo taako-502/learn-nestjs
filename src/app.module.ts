@@ -3,6 +3,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { GraphQLModule } from '@nestjs/graphql';
 import { DataSource } from 'typeorm';
 import { join } from 'path';
+import { config } from 'dotenv'
 
 // App
 import { AppController } from './app.controller';
@@ -15,6 +16,9 @@ import { TaskModule } from './task/task.module';
 import { HogeModule } from './hoge/hoge.module';
 
 import { Task } from './entities/task.entity';
+// import { PrismaService } from './prisma.service';
+
+config()
 
 @Module({
   imports: [
@@ -24,11 +28,11 @@ import { Task } from './entities/task.entity';
     }),
     TypeOrmModule.forRoot({
       type: 'mysql',
-      host: 'learn-nestjs-db-server',
-      port: 3306,
-      username: 'user',
-      password: 'pwd',
-      database: 'test',
+      host: process.env.DB_HOST,
+      port: process.env.DB_PORT ? Number(process.env.DB_PORT) : 3306,
+      username: process.env.DB_USER,
+      password: process.env.DB_PASSWORD,
+      database: process.env.DB_NAME,
       entities: [Task],
       synchronize: true,
       dropSchema: false, //データベースの初期化有無
@@ -38,7 +42,8 @@ import { Task } from './entities/task.entity';
     HogeModule,
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, /* PrismaService */], // TODO: PrismaServiceをここに追加
+  exports: [/* PrismaService */], // TODO: PrismaServiceをここに追加
 })
 export class AppModule {
   constructor(private dataSource: DataSource) {}

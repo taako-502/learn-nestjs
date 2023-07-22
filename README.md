@@ -44,7 +44,6 @@ $ curl http://localhost:3000/hoge -X GET
 ```sql
 CREATE USER 'user'@'localhost' IDENTIFIED BY 'password';
 GRANT ALL PRIVILEGES ON *.* TO 'user'@'localhost' WITH GRANT OPTION;
-FLUSH PRIVILEGES;
 GRANT CREATE, ALTER, DROP ON *.* TO 'user'@'%';
 FLUSH PRIVILEGES;
 ```
